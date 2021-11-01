@@ -1,0 +1,23 @@
+<h1 class="text-center"> Mes Patins </h1> 
+<div class="text-center"> <%= link_to 'Welcome Page ', welcome_path(@name) %> </div>
+<% @gossips.length.times do |i| %> 
+  <div class="card">
+    <div class="text-center"> Ecrit par <%=@gossips[i].user.first_name %>  <%=@gossips[i].user.last_name %> </div>
+
+    <div class="text-center"> Titre: <%= @gossips[i].title %> </div> 
+    
+    <div class="text-center"> Contenu: <%=@gossips[i].content %> </div>  
+
+    <div class="text-center"> <%= link_to 'Infos Du User ', user_info_path(@gossips[i].user.id) %> </div> 
+
+    <div class="text-center"> <%= link_to 'Page du Gossip', gossip_info_path(@gossips[i].id) %> </div>
+    </div>
+
+    <br/>
+    <br/>
+
+<% end %> 
+
+
+
+    
